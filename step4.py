@@ -17,12 +17,12 @@ for i in range(0, len(prefixDict['array'])-1):
     if(prefixDict['array'][i][0:prefixLength] != prefix):
         words.append(unicode(prefixDict['array'][i]))
 
-print prefixDict['prefix']
-print prefixDict['array']
-print words
+# print prefixDict['prefix']
+# print prefixDict['array']
+# print words
 
 answerDict = {'token': '5185bcac830273a1051d4c260585f734', 'array': words}
-print answerDict
+# print answerDict
 
 response = requests.post(validationURL, data=json.dumps(answerDict), headers=HTTPHeaders)
 
