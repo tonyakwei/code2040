@@ -14,8 +14,8 @@ dateDict = json.loads(requests.post(challengeURL, data=json.dumps(tokenDict), he
 datestamp = dateDict['datestamp']
 interval = dateDict['interval']
 
-print datestamp
-print interval
+# print datestamp
+# print interval
 
 year = datestamp[0:4]
 month = datestamp[5:7]
@@ -70,3 +70,6 @@ print answerResponse['datestamp']
 response = requests.post(validationURL, data=json.dumps(answerResponse), headers=HTTPHeaders)
 
 print response.text
+
+#Interestingly, datetime seemed to contain information about the timezone. I added five hours to shift the date to UTC
+#before sending it to the server. This likely would cause trouble with computers in other timezones.
